@@ -1,11 +1,15 @@
-FROM node:alpine
+FROM node:latest
 
-COPY . /home/app
+RUN mkdir /bdsm
 
-RUN cd /home/app && npm install
+WORKDIR /bdsm
 
-WORKDIR /home/app
+COPY . /bdsm
+
+RUN cd /bdsm && npm install
 
 EXPOSE 3000
 
-CMD node bin/www
+ENTRYPOINT ["npm", "run"]
+
+CMD ["start"]
