@@ -2,7 +2,7 @@ const router = require('koa-router')()
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
-    title: '这是稳定主分支版本!'
+    title: '这是版本v1.0.1!'
   })
 })
 
